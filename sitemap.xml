@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://Crystalqt.github.io/share/index.html</loc>
+    <loc>http://Crystalqt.github.io/about/index.html</loc>
     
-    <lastmod>2018-01-22T08:51:21.000Z</lastmod>
+    <lastmod>2018-01-23T04:05:47.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://Crystalqt.github.io/2018/01/22/CrystalCrazy/</loc>
     
-    <lastmod>2018-01-22T07:08:27.000Z</lastmod>
+    <lastmod>2018-01-23T02:52:51.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://Crystalqt.github.io/tags/index.html</loc>
+    
+    <lastmod>2018-01-23T02:43:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://Crystalqt.github.io/share/index.html</loc>
+    
+    <lastmod>2018-01-22T08:51:21.000Z</lastmod>
     
   </url>
   

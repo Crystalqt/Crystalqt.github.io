@@ -1,274 +1,650 @@
-
-
-
-
-
-
-
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
   
-  <meta name="author" content="梦涵">
+  <title>CrystalCrazy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="自我管理，知识管理，时间管理，阅读，思维导图">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CrystalCrazy">
+<meta property="og:url" content="http://Crystalqt.github.io/index.html">
+<meta property="og:site_name" content="CrystalCrazy">
+<meta property="og:description" content="自我管理，知识管理，时间管理，阅读，思维导图">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CrystalCrazy">
+<meta name="twitter:description" content="自我管理，知识管理，时间管理，阅读，思维导图">
+  
+    <link rel="alternative" href="/atom.xml" title="CrystalCrazy" type="application/atom+xml">
   
   
+    <link rel="icon" href="/http://oayoilchh.bkt.clouddn.com/2016/07/27/18:05:26%20">
   
   
-    <meta name="description" content="自我管理，知识管理，时间管理，阅读，思维导图">
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
   
-  <title>自我管理，知识管理，时间管理，阅读，思维导图 [ CrystalCrazy ]</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    <link rel="alternate" href="/atom.xml" title="CrystalCrazy">
+    
+    
   
   
-    <link rel="shortcut icon" href="/favicon.ico">
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
-  
-  <link rel="stylesheet" href="/css/random.css">
-<link rel="stylesheet" href="/css/vegas.min.css">
-<link rel="stylesheet" href="/css/highlight-railscasts.css">
-<link rel="stylesheet" href="/css/jquery.fancybox.css">
-<link rel="stylesheet" href="/css/iconfont/iconfont.css">
-<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
-<link rel="stylesheet" href="/css/plyr.css">
-  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
 </head>
-
-<div class="random-center hide-area">
-  <div id="random-index">
-    <div class="center-field">
-      <img class="avatar" src="/uploads/car_touxiang.jpg" width=120 height=120 onClick="openUserCard()">
-    </div>
-    <div class="center-field">
-      <div class="title" onClick="openUserCard()">CrystalCrazy</div>
-      <div class="sub-title" onClick="openUserCard()">自我管理，知识管理，时间管理，阅读，思维导图</div>
-    </div>
-    <hr >
-    <div class="center-field">
-      <ul class="index-nav-link">
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="img/head.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">梦涵</a></h1>
+        </hgroup>
+        
+        <p class="header-subtitle">自我管理，知识管理，时间管理，阅读，思维导图</p>
         
         
-          
-            <li><a href="/index.html">Home</a></li>
-          
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
         
-          
-            <li><a href="/archives">Archives</a></li>
-          
         
-          
-            <li><a href="/about">About</a></li>
-          
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
         
-          
-            <li><a href="https://github.com/crystalqt/">Github</a></li>
-          
         
-      </ul>
-      <ul class="social-icon">
-  
-  
-    <li>
-      <a href="https://github.com/stiekel/hexo-theme-random">
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
         
-          <i class="icon iconfont github">&#xe606;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="https://coding.net/">
-        
-          <i class="icon iconfont coding">&#xe607;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="https://twitter.com/">
-        
-          <i class="icon iconfont twitter">&#xe600;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="http://weibo.com/">
-        
-          <i class="icon iconfont weibo">&#xe602;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="http://www.douban.com/people/Stiekel/">
-        
-          <i class="icon iconfont douban">&#xe60f;</i>
-        
-      </a>
-    </li>
-  
-</ul>
-    </div>
-  </div>
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="http://bestwing.me">博客首页</a></li>
+                        
+                            <li><a  href="/archives">文章归档</a></li>
+                        
+                            <li><a  href="/CTFStudy">学习导航</a></li>
+                        
+                            <li><a  href="/PWNABLE">PWNABLE</a></li>
+                        
+                            <li><a  href="/resume">个人简历</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail"  target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kvH99PT39-Dn_efS5PvivOPjvPH9-w" title="mail">mail</a>
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/WinMin" title="github">github</a>
+                            
+                                <a class="fl zhihu"  target="_blank" href="https://www.zhihu.com/people/Swings" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/2672317963/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/哲理/" style="font-size: 10px;">哲理</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://ring3.xyz/">Yllen</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://mxny.org/">麦香浓郁</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://whereisk0shl.top/">K0sh1</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.ycjcl.cc/">信鑫</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://bystudent.com/">ByStundet表哥</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.jarviswang.me/">汪神_Jarvis</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sh3ll.me/">Chu</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.hackfun.org/">4ido10n</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/iamstudy">L3m0n</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://o0xmuhe.me/">muhe</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.nuptzj.cn/">_画船听雨</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.virzz.com/index.html">Virink</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.sqlsec.com/">国光</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bodkin.ren/">老锥</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cizel.cn/">C1zel</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://1phan.cc">1phan</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.liuil.top/">liuil</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/Ox9A82/">Ox9A82</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://burnegg.com/">burnegg</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://jwrsec.cn/">jwr-sec</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sudalover.cn/">苏打</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.binklac.com">VeroFess</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bendawang.site/">bendawang</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://weeklyalgo.codes/">hook</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.flier.net.cn/">Flier&#39;blog</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.mutepig.club">mutepig</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://blog.iret.xyz/list.aspx">Silver</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://simp1e.leanote.com/">Simple</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://processor.pub/">Processor</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">一只淹死在二进制海洋里的二进制狗</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
 </div>
-<div id="user-card">
-  <div class="center-field">
-    <img class="avatar" src="/uploads/car_touxiang.jpg">
-    <p id="description">自我管理，知识管理，时间管理，阅读，思维导图</p>
-    <ul class="social-icon">
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">梦涵</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">梦涵</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">自我管理，知识管理，时间管理，阅读，思维导图</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="http://bestwing.me">博客首页</a></li>
+                
+                    <li><a href="/archives">文章归档</a></li>
+                
+                    <li><a href="/CTFStudy">学习导航</a></li>
+                
+                    <li><a href="/PWNABLE">PWNABLE</a></li>
+                
+                    <li><a href="/resume">个人简历</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kvH99PT39-Dn_efS5PvivOPjvPH9-w" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/WinMin" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/Swings" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/2672317963/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap">
   
+    <article id="post-CrystalCrazy" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <li>
-      <a href="https://github.com/stiekel/hexo-theme-random">
-        
-          <i class="icon iconfont github">&#xe606;</i>
-        
-      </a>
-    </li>
+    <div class="article-meta">
+      <a href="/2018/01/23/CrystalCrazy/" class="article-date">
+      <time datetime="2018-01-23T07:38:11.000Z" itemprop="datePublished">2018-01-23</time>
+</a>
+    </div>
   
-    <li>
-      <a href="https://coding.net/">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
-          <i class="icon iconfont coding">&#xe607;</i>
-        
-      </a>
-    </li>
   
-    <li>
-      <a href="https://twitter.com/">
-        
-          <i class="icon iconfont twitter">&#xe600;</i>
-        
-      </a>
-    </li>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/23/CrystalCrazy/">中国古人23条顶级哲理：大水漫不过鸭子背！｜可读</a>
+    </h1>
   
-    <li>
-      <a href="http://weibo.com/">
-        
-          <i class="icon iconfont weibo">&#xe602;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="http://www.douban.com/people/Stiekel/">
-        
-          <i class="icon iconfont douban">&#xe60f;</i>
-        
-      </a>
-    </li>
-  
-</ul>
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=16435051&auto=1&height=66"></iframe></p>
+<h2 id="1-能倚在墙根看本闲书的人，一定内心很幸福！"><a href="#1-能倚在墙根看本闲书的人，一定内心很幸福！" class="headerlink" title="1.能倚在墙根看本闲书的人，一定内心很幸福！"></a>1.能倚在墙根看本闲书的人，一定内心很幸福！</h2><h2 id="2-人生如河，该来的总会来，该走的又总会漂走，当下最好！"><a href="#2-人生如河，该来的总会来，该走的又总会漂走，当下最好！" class="headerlink" title="2.人生如河，该来的总会来，该走的又总会漂走，当下最好！"></a>2.人生如河，该来的总会来，该走的又总会漂走，当下最好！</h2><h2 id="3-所谓开心，就是眼睛向上把快乐放大，所谓烦恼，就是眼睛向下把烦恼放大！"><a href="#3-所谓开心，就是眼睛向上把快乐放大，所谓烦恼，就是眼睛向下把烦恼放大！" class="headerlink" title="3.所谓开心，就是眼睛向上把快乐放大，所谓烦恼，就是眼睛向下把烦恼放大！"></a>3.所谓开心，就是眼睛向上把快乐放大，所谓烦恼，就是眼睛向下把烦恼放大！</h2><h2 id="4-花开自美，评说由人！"><a href="#4-花开自美，评说由人！" class="headerlink" title="4.花开自美，评说由人！"></a>4.花开自美，评说由人！</h2><h2 id="5-微笑，对人是礼物，对己是财富。今天，你微笑了吗？"><a href="#5-微笑，对人是礼物，对己是财富。今天，你微笑了吗？" class="headerlink" title="5.微笑，对人是礼物，对己是财富。今天，你微笑了吗？"></a>5.微笑，对人是礼物，对己是财富。今天，你微笑了吗？</h2><h2 id="6-一花一世界！"><a href="#6-一花一世界！" class="headerlink" title="6.一花一世界！"></a>6.一花一世界！</h2><h2 id="7-不懂放弃，怎攀高峰？"><a href="#7-不懂放弃，怎攀高峰？" class="headerlink" title="7.不懂放弃，怎攀高峰？"></a>7.不懂放弃，怎攀高峰？</h2><h2 id="8-登高才能望远！"><a href="#8-登高才能望远！" class="headerlink" title="8.登高才能望远！"></a>8.登高才能望远！</h2><h2 id="9-自信，是人生的支点！"><a href="#9-自信，是人生的支点！" class="headerlink" title="9.自信，是人生的支点！"></a>9.自信，是人生的支点！</h2><h2 id="10-彩虹总在风雨后！"><a href="#10-彩虹总在风雨后！" class="headerlink" title="10.彩虹总在风雨后！"></a>10.彩虹总在风雨后！</h2><h2 id="11-心中的天气是晴是雨，全在自己！"><a href="#11-心中的天气是晴是雨，全在自己！" class="headerlink" title="11.心中的天气是晴是雨，全在自己！"></a>11.心中的天气是晴是雨，全在自己！</h2><h2 id="12-立志前行，从来不晚！"><a href="#12-立志前行，从来不晚！" class="headerlink" title="12.立志前行，从来不晚！"></a>12.立志前行，从来不晚！</h2><h2 id="13-退一步，另有跷径！"><a href="#13-退一步，另有跷径！" class="headerlink" title="13.退一步，另有跷径！"></a>13.退一步，另有跷径！</h2><h2 id="14-好心未必有好结果！"><a href="#14-好心未必有好结果！" class="headerlink" title="14.好心未必有好结果！"></a>14.好心未必有好结果！</h2><h2 id="15-大水漫不过鸭子背！"><a href="#15-大水漫不过鸭子背！" class="headerlink" title="15.大水漫不过鸭子背！"></a>15.大水漫不过鸭子背！</h2><h2 id="16-原本各有千秋，何必争个高低！"><a href="#16-原本各有千秋，何必争个高低！" class="headerlink" title="16.原本各有千秋，何必争个高低！"></a>16.原本各有千秋，何必争个高低！</h2><h2 id="17-人生如旅，要学会停下来看看风景！"><a href="#17-人生如旅，要学会停下来看看风景！" class="headerlink" title="17.人生如旅，要学会停下来看看风景！"></a>17.人生如旅，要学会停下来看看风景！</h2><h2 id="18-同一扇窗户，向上看是风景，向下看是泥土！"><a href="#18-同一扇窗户，向上看是风景，向下看是泥土！" class="headerlink" title="18.同一扇窗户，向上看是风景，向下看是泥土！"></a>18.同一扇窗户，向上看是风景，向下看是泥土！</h2><h2 id="19-摆来摆去的，其实是我们的生命！"><a href="#19-摆来摆去的，其实是我们的生命！" class="headerlink" title="19.摆来摆去的，其实是我们的生命！"></a>19.摆来摆去的，其实是我们的生命！</h2><h2 id="20-神仙尚有不足，何况吾辈凡夫！"><a href="#20-神仙尚有不足，何况吾辈凡夫！" class="headerlink" title="20.神仙尚有不足，何况吾辈凡夫！"></a>20.神仙尚有不足，何况吾辈凡夫！</h2><h2 id="21-能大能小，万事了了，能收能放，扶摇直上！"><a href="#21-能大能小，万事了了，能收能放，扶摇直上！" class="headerlink" title="21.能大能小，万事了了，能收能放，扶摇直上！"></a>21.能大能小，万事了了，能收能放，扶摇直上！</h2><h2 id="22-山不辞石，故能成其高！"><a href="#22-山不辞石，故能成其高！" class="headerlink" title="22.山不辞石，故能成其高！"></a>22.山不辞石，故能成其高！</h2><h2 id="23-比山高的是人，比路长的是腿！"><a href="#23-比山高的是人，比路长的是腿！" class="headerlink" title="23.比山高的是人，比路长的是腿！"></a>23.比山高的是人，比路长的是腿！</h2>
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/中国经济网/">中国经济网</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/励志/">励志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/哲理/">哲理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/01/23/hello-world/" class="article-date">
+      <time datetime="2018-01-23T04:18:48.000Z" itemprop="datePublished">2018-01-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/23/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/HEXO/">HEXO</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-使用hexo搭建自己的博客 - 快速开始" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/18/使用hexo搭建自己的博客 - 快速开始/" class="article-date">
+      <time datetime="2017-12-18T07:00:09.000Z" itemprop="datePublished">2017-12-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/18/使用hexo搭建自己的博客 - 快速开始/">使用hexo搭建自己的博客 - 快速开始</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>工欲善其事，必先利其器。下面要开始用 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> + <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> 搭建自己的博客了。需要注意的是，网上的资料有一些已经过时，而现在的这篇文章也可能在以后过时，所以只将目前我搭建 hexo 博客站的经验总结如下。</p>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/12/18/使用hexo搭建自己的博客 - 快速开始/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
 </div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 梦涵
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="http://bestwing.me" target="_blank">Sw'blog</a> by Swing
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
 
 
-<div id="btn-view">Hide</div>
 
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
 <script>
-// is trigger analytics / tongji script
-var isIgnoreHost = false;
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
 
-if(window && window.location && window.location.host) {
-  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
-    return 0 === window.location.host.indexOf(address);
-  });
-}
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
-var isTriggerAnalytics = !( true && isIgnoreHost );
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
 
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
 </script>
 
 
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
 
-  
-  
-    <script src="/js/jquery-2.2.3.min.js"></script>
-  
-    <script src="/js/vegas.min.js"></script>
-  
-    <script src="/js/random.js"></script>
-  
-    <script src="/js/highlight.pack.js"></script>
-  
-    <script src="/js/jquery.mousewheel.pack.js"></script>
-  
-    <script src="/js/jquery.fancybox.pack.js"></script>
-  
-    <script src="/js/jquery.fancybox-thumbs.js"></script>
-  
-    <script src="/js/plyr.js"></script>
-  
-
-<script>
-
-  // fancybox
-  var backgroundImages = [];
-  
-  $('#post').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
-      var alt = this.alt || this.title;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'post' + i);
-    });
-  });
-  $(".fancybox").fancybox();
-
-var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
-var unsplashConfig = {"gravity":"north"};
-// is show background images
-var turnoffBackgroundImage = false;
-
-
-
-
-var backgroundColor = "34495E";
-
-$(".fancybox-thumb").fancybox({
-  prevEffect: 'none',
-  nextEffect: 'none',
-  helpers: {
-    title: {
-      type: 'outside'
-    },
-    thumbs: {
-      width: 50,
-      height: 50
-    }
-  }
-});
-
-// show video with plyr
-$(".video-container iframe").each(function(i){
-  var url = $(this).attr('src');
-  var id = url.split('/').pop();
-  var plyrContainer = document.createElement('div');
-  plyrContainer.className = 'plyr';
-  var plyrElement = document.createElement('div');
-  plyrElement.dataset.videoId = id;
-  switch(true) {
-    case url.search('youtube.com') >= 0:
-      plyrElement.dataset.type = 'youtube';
-      break;
-    case url.search('vimeo.com') >= 0:
-      plyrElement.dataset.type = 'vimeo';
-      break;
-    default:
-      return;
-  };
-  plyrContainer.appendChild(plyrElement);
-  $(this).parent().html(plyrContainer);
-});
-plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
-</script>
+  </div>
 </body>
 </html>
-

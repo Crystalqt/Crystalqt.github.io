@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>CrystalCrazy</title>
   
-  <subtitle>自我管理，知识管理，时间管理，阅读，思维导图</subtitle>
+  <subtitle>自我管理，知识管理，时间管理，阅读，思维导图，游记</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Crystalqt.github.io/"/>

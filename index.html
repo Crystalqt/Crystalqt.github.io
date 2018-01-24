@@ -194,7 +194,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/vim-命令/" style="font-size: 10px;">vim 命令</a> <a href="/tags/分屏/" style="font-size: 10px;">分屏</a> <a href="/tags/励志/" style="font-size: 15px;">励志</a> <a href="/tags/哲理/" style="font-size: 15px;">哲理</a> <a href="/tags/定位/" style="font-size: 10px;">定位</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
+                        <a href="/tags/git-repo/" style="font-size: 10px;">-git -repo</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/vim-命令/" style="font-size: 10px;">vim 命令</a> <a href="/tags/分屏/" style="font-size: 10px;">分屏</a> <a href="/tags/励志/" style="font-size: 15px;">励志</a> <a href="/tags/哲理/" style="font-size: 15px;">哲理</a> <a href="/tags/定位/" style="font-size: 10px;">定位</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
                     </div>
                 </section>
                 
@@ -326,6 +326,82 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="git-在研发中常用的命令" class="article article-type-git" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/01/24/在研发中常用的命令/" class="article-date">
+      <time datetime="2018-01-24T07:08:39.000Z" itemprop="datePublished">2018-01-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/24/在研发中常用的命令/">Git在研发中常用的命令</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>Git是目前世界上最先进的分布式版本控制系统，由Linux创始人Linus在2005年开发，用于对抗商业版的版本控制工具BitKeeper，历史比较有意思，感兴趣的师傅们可以搜索了解一下。</p>
+<p>分布式</p>
+<p>首先要说明的是Git是一个分布式版本控制系统，重点在于分布式。也就是说我们从github上每clone下来一个项目，都是clone下一个完整的仓库，里面包含了远程仓库的所有信息。我们在clone的目录下会发现一个.git目录，这个目录就是本地仓库所在的位置，注意不要去修改这个目录，如果删除了这个目录，本地仓库及其相关信息都会消失。</p>
+<p>工作区和版本库</p>
+<p>这里的工作区指的是不包括.git目录的所有文件，你可以对工作区进行任意的修改，都不会影响到本地的仓库。<br>.git目录是本地仓库，也叫作版本库。版本库可以粗略的分为两个部分——暂存区和分支区，这两个区域是相互独立的。<br>我们使用“git add”命令把工作区的文件修改添加到暂存区，使用“git commit”命令把暂存区的文件修改提交到当前分支。如下面两幅图，暂存区译为stage。</p>
+<div align="center"><br><img src="/uploads/git.png" alt="git图"><br></div>
+
+<p>暂存区是Git非常重要的特性，需要仔细理解。<br>分支<br>每次提交，Git都把它们串成一条时间线，这条时间线就是一个分支。当只有一个分支时，这个分支叫主分支，即master分支。<br>一开始的时候，master分支是一条线，Git让master指向最新的提交，再用HEAD指向master，就能确定当前分支，以及当前分支的提交点。每次提交，master分支都会向前移动一步，这样，随着你不断提交，master分支的线也越来越长.</p>
+<h1 id="代码修改及提交命令"><a href="#代码修改及提交命令" class="headerlink" title="代码修改及提交命令"></a>代码修改及提交命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git status     					   // 查看当前代码修改的状态</span><br><span class="line">git diff [文件名]      			   // 查看文件修改</span><br><span class="line">git add [文件名]				   // 将修改的文件添加到git暂存区</span><br><span class="line">git add . 						   // 将当前目录下所有修改文件都添加到暂存区</span><br><span class="line">git add *                         // 同上</span><br><span class="line">git rm [文件名]                   // 删除文件并添加到git暂存区</span><br><span class="line">git commit –m “注释内容”          // 将暂存区的文件修改，添加注释，修改详细信息</span><br><span class="line">git push 服务器的提交路径 本地分支名              //提交本地修改到服务器代码库</span><br></pre></td></tr></table></figure>
+<h1 id="历史提交信息查看、回退"><a href="#历史提交信息查看、回退" class="headerlink" title="历史提交信息查看、回退"></a>历史提交信息查看、回退</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> 						//查看当前所有的commit的<span class="built_in">log</span>信息</span><br><span class="line">git show commit_id           //查看commit_id的详细修改信息</span><br><span class="line">git reset –soft commit_id       //回退到某commit_id条<span class="built_in">log</span>信息，但不会回退本地修改;若你修改代码已经git commit了，突然发现当前代码不是自己需要的，需要回退之前的样子，就可以执行git reset –soft commit_id命令来回退之前的commit提交。</span><br><span class="line">git reset HEAD 文件名        //撤销当前文件添加到暂存区</span><br><span class="line">git checkout 文件名          //撤销某文件的修改</span><br><span class="line">git <span class="built_in">log</span> --graph              //查看自己的提交记录</span><br><span class="line">git reflog                   //查看自己的操作历史</span><br><span class="line">git blame [FILE_PATH]        //查看文件的每一部分最后由谁改动</span><br></pre></td></tr></table></figure>
+<h1 id="Patch制作，合入"><a href="#Patch制作，合入" class="headerlink" title="Patch制作，合入"></a>Patch制作，合入</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git format-patch –s [commit-id]       //打patch命令，-s参数代表循环;这里不加-s就是打某一条的patch，有-s这个参数就可以打很多条了，就看是第几条的commit-id了。</span><br><span class="line">git reset –hard commit-id             //移动<span class="built_in">log</span>信息指针</span><br><span class="line">git am [patch_name]                   //合入某条patch的命令</span><br></pre></td></tr></table></figure>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch 			 //查看所有的分支</span><br><span class="line">git checkout 分支名              //创建一个新的分支</span><br><span class="line">git checkout –b 分支名           //创建一个新的分支名并且切换到此分支上</span><br></pre></td></tr></table></figure>
+<h1 id="Repo命令"><a href="#Repo命令" class="headerlink" title="Repo命令"></a>Repo命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">repo status                    //查看所有git库的状态</span><br><span class="line">repo diff                      //查看所有git库的修改</span><br><span class="line">repo forall –c git branch 分支名  //将所有git库建立同一个分支名</span><br></pre></td></tr></table></figure>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/SCM/">SCM</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git-repo/">-git -repo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-Markdown中对图片进行居中-设置大小等操作" class="article article-type-post" itemscope itemprop="blogPost">
   

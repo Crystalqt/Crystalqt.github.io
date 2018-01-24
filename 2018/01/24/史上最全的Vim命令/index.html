@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>CrystalCrazy</title>
+  <title>史上最全的Vim命令 | CrystalCrazy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="自我管理，知识管理，时间管理，阅读，思维导图，游记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CrystalCrazy">
-<meta property="og:url" content="http://Crystalqt.github.io/index.html">
+  <meta name="description" content="曾经使用了两年多的Vim，手册也翻过一遍。虽然现在不怎么用vim了，曾经的笔记还是贴出来，与喜欢vim的朋友分享。 1. 关于Vimvim是我最喜欢的编辑器，也是linux下第二强大的编辑器。 虽然emacs是公认的世界第一，我认为使用emacs并没有使用vi进行编辑来得高效。 如果是初学vi，运行一下vimtutor是个聪明的决定。 （如果你的系统环境不是中文，而你想使用中文的vimtutor，">
+<meta name="keywords" content="vim 命令,正则表达式,搜索,定位,分屏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="史上最全的Vim命令">
+<meta property="og:url" content="http://Crystalqt.github.io/2018/01/24/史上最全的Vim命令/index.html">
 <meta property="og:site_name" content="CrystalCrazy">
-<meta property="og:description" content="自我管理，知识管理，时间管理，阅读，思维导图，游记">
+<meta property="og:description" content="曾经使用了两年多的Vim，手册也翻过一遍。虽然现在不怎么用vim了，曾经的笔记还是贴出来，与喜欢vim的朋友分享。 1. 关于Vimvim是我最喜欢的编辑器，也是linux下第二强大的编辑器。 虽然emacs是公认的世界第一，我认为使用emacs并没有使用vi进行编辑来得高效。 如果是初学vi，运行一下vimtutor是个聪明的决定。 （如果你的系统环境不是中文，而你想使用中文的vimtutor，">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-24T02:54:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CrystalCrazy">
-<meta name="twitter:description" content="自我管理，知识管理，时间管理，阅读，思维导图，游记">
+<meta name="twitter:title" content="史上最全的Vim命令">
+<meta name="twitter:description" content="曾经使用了两年多的Vim，手册也翻过一遍。虽然现在不怎么用vim了，曾经的笔记还是贴出来，与喜欢vim的朋友分享。 1. 关于Vimvim是我最喜欢的编辑器，也是linux下第二强大的编辑器。 虽然emacs是公认的世界第一，我认为使用emacs并没有使用vi进行编辑来得高效。 如果是初学vi，运行一下vimtutor是个聪明的决定。 （如果你的系统环境不是中文，而你想使用中文的vimtutor，">
   
     <link rel="alternative" href="/atom.xml" title="CrystalCrazy" type="application/atom+xml">
   
@@ -28,9 +30,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -42,8 +41,8 @@
           rootUrl: '/',
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -325,9 +324,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-史上最全的Vim命令" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-史上最全的Vim命令" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2018/01/24/史上最全的Vim命令/" class="article-date">
@@ -343,12 +340,27 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/24/史上最全的Vim命令/">史上最全的Vim命令</a>
+    <h1 class="article-title" itemprop="name">
+      史上最全的Vim命令
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/SCM/">SCM</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim-命令/">vim 命令</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分屏/">分屏</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/定位/">定位</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -412,324 +424,191 @@
 
       
       
-    </div>
-    
-    <div class="article-info article-info-index">
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
       
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/SCM/">SCM</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim-命令/">vim 命令</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分屏/">分屏</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/定位/">定位</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搜索/">搜索</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-这11个习惯，请逼自己养成！（第五个很多人都做不到）" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/01/24/这11个习惯，请逼自己养成！（第五个很多人都做不到）/" class="article-date">
-      <time datetime="2018-01-24T02:16:40.000Z" itemprop="datePublished">2018-01-24</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/24/这11个习惯，请逼自己养成！（第五个很多人都做不到）/">这11个习惯，请逼自己养成！（第五个很多人都做不到）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="01"><a href="#01" class="headerlink" title="01"></a>01</h2><h2 id="不带手机上床"><a href="#不带手机上床" class="headerlink" title="不带手机上床"></a>不带手机上床</h2><p>手机对我们的诱惑力实在太大，如果带着手机上床，往往会将正常的睡觉时间推迟。另外，坐在床上玩手机对眼睛和颈椎的伤害都很大。睡觉前远离手机，上床后可以看会儿书，按时睡觉，保证足够的睡眠。</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="/uploads/日出.jpg" alt="日出"></h2><h2 id="02"><a href="#02" class="headerlink" title="02"></a>02</h2><h2 id="吃早餐"><a href="#吃早餐" class="headerlink" title="吃早餐"></a>吃早餐</h2><p>一定要吃早餐，保证足够的营养摄入！毕竟，早上起来的时候，我们的身体已经有一晚没有进食了，如果不能及时进行补充，很容易把身体拖垮。  </p>
-<p> 一天之计在于晨，吃一顿保质保量的早餐，给自己的身体充满电。</p>
-<h2 id="03"><a href="#03" class="headerlink" title="03"></a>03</h2><h2 id="凡事提前10分钟"><a href="#凡事提前10分钟" class="headerlink" title="凡事提前10分钟"></a>凡事提前10分钟</h2><p>做任何事，最好都给自己留点余地。</p>
-<p>凡事提前10分钟，在遇到突发情况的时候让自己有足够的时间去处理，不会让自己总是处在一种非常急迫的状态。   </p>
-<p>提前10分钟起床，提前10分钟出门……你会发现，一整天都变得从容很多。</p>
-<h2 id="04"><a href="#04" class="headerlink" title="04"></a>04</h2><h2 id="事分轻重缓急"><a href="#事分轻重缓急" class="headerlink" title="事分轻重缓急"></a>事分轻重缓急</h2><p>每天开始工作前，不要急急忙忙抓到什么做什么。先静下心来理一理思路，将事情分个轻重缓急，先做紧急的、重要的，再做不急的、次要的。</p>
-<p>当日事当日毕。这样既能保证工作高效，又能合理利用时间。</p>
-<h2 id="05"><a href="#05" class="headerlink" title="05"></a>05</h2><h2 id="学会拒绝"><a href="#学会拒绝" class="headerlink" title="学会拒绝"></a>学会拒绝</h2><p>有一句经典台词：你每次找我帮忙我都欣然接受，如果有一次我不能帮你，你就会对我产生一种莫名奇妙的厌恶感。我才不要自讨苦吃。    </p>
-<p>适时学会拒绝，不要让被帮助的人对你产生依赖感。</p>
-<h2 id="06"><a href="#06" class="headerlink" title="06"></a>06</h2><h2 id="学会换位思考"><a href="#学会换位思考" class="headerlink" title="学会换位思考"></a>学会换位思考</h2><p>不到万不得已，尽量少开口求人。</p>
-<p>开口前要试着互换位置，问问自己如果遇到这样的求助，是帮还是不帮。如果答案是否定的，那就自己再想其它办法吧。 </p>
-<p>很多事情都同理，设身处地地多从对方的角度来看待问题，你会发现处事方式真的很重要。</p>
-<h2 id="07"><a href="#07" class="headerlink" title="07"></a>07</h2><h2 id="耐心听别人讲话"><a href="#耐心听别人讲话" class="headerlink" title="耐心听别人讲话"></a>耐心听别人讲话</h2><p>首先，耐心听别人讲话是对对方的一种尊重，是待人接物最基本的礼貌。</p>
-<p>其次，三人行必有我师。只要我们有心，总能从别人的言行中收获自己想要的东西。</p>
-<p>因此，耐心听别人讲话，也是吸收智慧的一个重要途径。</p>
-<h2 id="08"><a href="#08" class="headerlink" title="08"></a>08</h2><h2 id="坚持运动"><a href="#坚持运动" class="headerlink" title="坚持运动"></a>坚持运动</h2><p>生命在于运动，要养成坚持运动的好习惯。</p>
-<p>不管去健身房还是在小区楼下跑跑步、在房间里跳跳操，都可以；另外，上下班骑车或步行也是不错的选择。</p>
-<h2 id="09"><a href="#09" class="headerlink" title="09"></a>09</h2><h2 id="学会理财"><a href="#学会理财" class="headerlink" title="学会理财"></a>学会理财</h2><p>见过很多赚得不少但依然月光的人，大家似乎都有一个通病，自己都不知道钱花到哪里去了，每一分钱都花得很随性，完全没有理财的观念。有句话叫：你不理财，财不理你。     </p>
-<p>理财是人生中的一件大事，会理财才能积攒财富。不求大富大贵，但求遇到突发情况可以应急。</p>
-<h2 id="10"><a href="#10" class="headerlink" title="10"></a>10</h2><h2 id="远离抱怨，反省自己"><a href="#远离抱怨，反省自己" class="headerlink" title="远离抱怨，反省自己"></a>远离抱怨，反省自己</h2><p>遇到问题，不要忙着抱怨。抱怨换不来成功，只会伤害感情。</p>
-<p>多从自己身上找原因，问问自己还有什么做得不够的，有则改之，无则加勉。</p>
-<p>如果大家都能有这样的觉悟，那么离下一次成功也就不远了。</p>
-<h2 id="11"><a href="#11" class="headerlink" title="11"></a>11</h2><h2 id="控制情绪，做一个温柔的人"><a href="#控制情绪，做一个温柔的人" class="headerlink" title="控制情绪，做一个温柔的人"></a>控制情绪，做一个温柔的人</h2><p>人都有脾气，都有任性的时候，但要学会自己排解情绪，别把气撒在别人身上。</p>
-<p>坏脾气不但解决不了问题，还会把简单的事情变复杂。</p>
-<p>当你越是变得成熟、温柔，你就越能感知到这个世界的美好和善意。</p>
-<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="/uploads/中国网.jpg" alt="视觉中国"></h2>
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/中国经济网/">中国经济网</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/励志/">励志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/哲理/">哲理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-CrystalCrazy" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/01/23/CrystalCrazy/" class="article-date">
-      <time datetime="2018-01-23T07:38:11.000Z" itemprop="datePublished">2018-01-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/23/CrystalCrazy/">中国古人23条顶级哲理：大水漫不过鸭子背！｜可读</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=16435051&auto=1&height=66"></iframe></p>
-<h2 id="1-能倚在墙根看本闲书的人，一定内心很幸福！"><a href="#1-能倚在墙根看本闲书的人，一定内心很幸福！" class="headerlink" title="1.能倚在墙根看本闲书的人，一定内心很幸福！"></a>1.能倚在墙根看本闲书的人，一定内心很幸福！</h2><h2 id="2-人生如河，该来的总会来，该走的又总会漂走，当下最好！"><a href="#2-人生如河，该来的总会来，该走的又总会漂走，当下最好！" class="headerlink" title="2.人生如河，该来的总会来，该走的又总会漂走，当下最好！"></a>2.人生如河，该来的总会来，该走的又总会漂走，当下最好！</h2><h2 id="3-所谓开心，就是眼睛向上把快乐放大，所谓烦恼，就是眼睛向下把烦恼放大！"><a href="#3-所谓开心，就是眼睛向上把快乐放大，所谓烦恼，就是眼睛向下把烦恼放大！" class="headerlink" title="3.所谓开心，就是眼睛向上把快乐放大，所谓烦恼，就是眼睛向下把烦恼放大！"></a>3.所谓开心，就是眼睛向上把快乐放大，所谓烦恼，就是眼睛向下把烦恼放大！</h2><h2 id="4-花开自美，评说由人！"><a href="#4-花开自美，评说由人！" class="headerlink" title="4.花开自美，评说由人！"></a>4.花开自美，评说由人！</h2><h2 id="5-微笑，对人是礼物，对己是财富。今天，你微笑了吗？"><a href="#5-微笑，对人是礼物，对己是财富。今天，你微笑了吗？" class="headerlink" title="5.微笑，对人是礼物，对己是财富。今天，你微笑了吗？"></a>5.微笑，对人是礼物，对己是财富。今天，你微笑了吗？</h2><h2 id="6-一花一世界！"><a href="#6-一花一世界！" class="headerlink" title="6.一花一世界！"></a>6.一花一世界！</h2><h2 id="7-不懂放弃，怎攀高峰？"><a href="#7-不懂放弃，怎攀高峰？" class="headerlink" title="7.不懂放弃，怎攀高峰？"></a>7.不懂放弃，怎攀高峰？</h2><h2 id="8-登高才能望远！"><a href="#8-登高才能望远！" class="headerlink" title="8.登高才能望远！"></a>8.登高才能望远！</h2><h2 id="9-自信，是人生的支点！"><a href="#9-自信，是人生的支点！" class="headerlink" title="9.自信，是人生的支点！"></a>9.自信，是人生的支点！</h2><h2 id="10-彩虹总在风雨后！"><a href="#10-彩虹总在风雨后！" class="headerlink" title="10.彩虹总在风雨后！"></a>10.彩虹总在风雨后！</h2><h2 id="11-心中的天气是晴是雨，全在自己！"><a href="#11-心中的天气是晴是雨，全在自己！" class="headerlink" title="11.心中的天气是晴是雨，全在自己！"></a>11.心中的天气是晴是雨，全在自己！</h2><h2 id="12-立志前行，从来不晚！"><a href="#12-立志前行，从来不晚！" class="headerlink" title="12.立志前行，从来不晚！"></a>12.立志前行，从来不晚！</h2><h2 id="13-退一步，另有跷径！"><a href="#13-退一步，另有跷径！" class="headerlink" title="13.退一步，另有跷径！"></a>13.退一步，另有跷径！</h2><h2 id="14-好心未必有好结果！"><a href="#14-好心未必有好结果！" class="headerlink" title="14.好心未必有好结果！"></a>14.好心未必有好结果！</h2><h2 id="15-大水漫不过鸭子背！"><a href="#15-大水漫不过鸭子背！" class="headerlink" title="15.大水漫不过鸭子背！"></a>15.大水漫不过鸭子背！</h2><h2 id="16-原本各有千秋，何必争个高低！"><a href="#16-原本各有千秋，何必争个高低！" class="headerlink" title="16.原本各有千秋，何必争个高低！"></a>16.原本各有千秋，何必争个高低！</h2><h2 id="17-人生如旅，要学会停下来看看风景！"><a href="#17-人生如旅，要学会停下来看看风景！" class="headerlink" title="17.人生如旅，要学会停下来看看风景！"></a>17.人生如旅，要学会停下来看看风景！</h2><h2 id="18-同一扇窗户，向上看是风景，向下看是泥土！"><a href="#18-同一扇窗户，向上看是风景，向下看是泥土！" class="headerlink" title="18.同一扇窗户，向上看是风景，向下看是泥土！"></a>18.同一扇窗户，向上看是风景，向下看是泥土！</h2><h2 id="19-摆来摆去的，其实是我们的生命！"><a href="#19-摆来摆去的，其实是我们的生命！" class="headerlink" title="19.摆来摆去的，其实是我们的生命！"></a>19.摆来摆去的，其实是我们的生命！</h2><h2 id="20-神仙尚有不足，何况吾辈凡夫！"><a href="#20-神仙尚有不足，何况吾辈凡夫！" class="headerlink" title="20.神仙尚有不足，何况吾辈凡夫！"></a>20.神仙尚有不足，何况吾辈凡夫！</h2><h2 id="21-能大能小，万事了了，能收能放，扶摇直上！"><a href="#21-能大能小，万事了了，能收能放，扶摇直上！" class="headerlink" title="21.能大能小，万事了了，能收能放，扶摇直上！"></a>21.能大能小，万事了了，能收能放，扶摇直上！</h2><h2 id="22-山不辞石，故能成其高！"><a href="#22-山不辞石，故能成其高！" class="headerlink" title="22.山不辞石，故能成其高！"></a>22.山不辞石，故能成其高！</h2><h2 id="23-比山高的是人，比路长的是腿！"><a href="#23-比山高的是人，比路长的是腿！" class="headerlink" title="23.比山高的是人，比路长的是腿！"></a>23.比山高的是人，比路长的是腿！</h2>
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/中国经济网/">中国经济网</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/励志/">励志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/哲理/">哲理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/01/23/hello-world/" class="article-date">
-      <time datetime="2018-01-23T04:18:48.000Z" itemprop="datePublished">2018-01-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/23/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/HEXO/">HEXO</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-使用hexo搭建自己的博客 - 快速开始" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/12/18/使用hexo搭建自己的博客 - 快速开始/" class="article-date">
-      <time datetime="2017-12-18T07:00:09.000Z" itemprop="datePublished">2017-12-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/18/使用hexo搭建自己的博客 - 快速开始/">使用hexo搭建自己的博客 - 快速开始</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>工欲善其事，必先利其器。下面要开始用 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> + <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> 搭建自己的博客了。需要注意的是，网上的资料有一些已经过时，而现在的这篇文章也可能在以后过时，所以只将目前我搭建 hexo 博客站的经验总结如下。</p>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/12/18/使用hexo搭建自己的博客 - 快速开始/#more">more >></a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/01/24/史上最全的Vim命令/">史上最全的Vim命令</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 梦涵 的个人博客">梦涵</a></p>
+        <p><span>发布时间:</span>2018年01月24日 - 10时44分</p>
+        <p><span>最后更新:</span>2018年01月24日 - 10时54分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/01/24/史上最全的Vim命令/" title="史上最全的Vim命令">http://Crystalqt.github.io/2018/01/24/史上最全的Vim命令/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://Crystalqt.github.io/2018/01/24/史上最全的Vim命令/　　作者: 梦涵" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
-      
-      <div class="clearfix"></div>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
-    
-  </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/24/这11个习惯，请逼自己养成！（第五个很多人都做不到）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">这11个习惯，请逼自己养成！（第五个很多人都做不到）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-关于Vim"><span class="toc-number">1.</span> <span class="toc-text">1. 关于Vim</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-Vim的几种模式"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 Vim的几种模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-启动Vim"><span class="toc-number">2.</span> <span class="toc-text">2. 启动Vim</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-文档操作"><span class="toc-number">3.</span> <span class="toc-text">3. 文档操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-光标的移动"><span class="toc-number">4.</span> <span class="toc-text">4. 光标的移动</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-基本移动"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 基本移动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-翻屏"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 翻屏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-标记"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 标记</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-插入文本"><span class="toc-number">5.</span> <span class="toc-text">5. 插入文本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-基本插入"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 基本插入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-改写插入"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 改写插入</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-剪切复制和寄存器"><span class="toc-number">6.</span> <span class="toc-text">6. 剪切复制和寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-剪切和复制、粘贴"><span class="toc-number">6.1.</span> <span class="toc-text">6.1 剪切和复制、粘贴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-文本对象"><span class="toc-number">6.2.</span> <span class="toc-text">6.2 文本对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-寄存器"><span class="toc-number">6.3.</span> <span class="toc-text">6.3 寄存器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-查找与替换"><span class="toc-number">7.</span> <span class="toc-text">7. 查找与替换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-查找"><span class="toc-number">7.1.</span> <span class="toc-text">7.1 查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-替换"><span class="toc-number">7.2.</span> <span class="toc-text">7.2 替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3-正则表达式"><span class="toc-number">7.3.</span> <span class="toc-text">7.3 正则表达式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-排版"><span class="toc-number">8.</span> <span class="toc-text">8. 排版</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-1-基本排版"><span class="toc-number">8.1.</span> <span class="toc-text">8.1 基本排版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-2-拼写检查"><span class="toc-number">8.2.</span> <span class="toc-text">8.2 拼写检查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-3-统计字数"><span class="toc-number">8.3.</span> <span class="toc-text">8.3 统计字数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-编辑多个文件"><span class="toc-number">9.</span> <span class="toc-text">9. 编辑多个文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-1-一次编辑多个文件"><span class="toc-number">9.1.</span> <span class="toc-text">9.1 一次编辑多个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-2-多标签编辑"><span class="toc-number">9.2.</span> <span class="toc-text">9.2 多标签编辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-3-缓冲区"><span class="toc-number">9.3.</span> <span class="toc-text">9.3 缓冲区</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-分屏编辑"><span class="toc-number">10.</span> <span class="toc-text">10. 分屏编辑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#10-1-水平分割"><span class="toc-number">10.1.</span> <span class="toc-text">10.1 水平分割</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-2-垂直分割"><span class="toc-number">10.2.</span> <span class="toc-text">10.2 垂直分割</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-3-关闭子窗口"><span class="toc-number">10.3.</span> <span class="toc-text">10.3 关闭子窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-4-调整窗口大小"><span class="toc-number">10.4.</span> <span class="toc-text">10.4 调整窗口大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-5-切换和移动窗口"><span class="toc-number">10.5.</span> <span class="toc-text">10.5 切换和移动窗口</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-快速编辑"><span class="toc-number">11.</span> <span class="toc-text">11. 快速编辑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-1-改变大小写"><span class="toc-number">11.1.</span> <span class="toc-text">11.1 改变大小写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-2-替换（normal模式）"><span class="toc-number">11.2.</span> <span class="toc-text">11.2 替换（normal模式）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-3-撤消与重做（normal模式）"><span class="toc-number">11.3.</span> <span class="toc-text">11.3 撤消与重做（normal模式）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-4-宏"><span class="toc-number">11.4.</span> <span class="toc-text">11.4 宏</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-编辑特殊文件"><span class="toc-number">12.</span> <span class="toc-text">12. 编辑特殊文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#12-1-文件加解密"><span class="toc-number">12.1.</span> <span class="toc-text">12.1 文件加解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-2-文件的编码"><span class="toc-number">12.2.</span> <span class="toc-text">12.2 文件的编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-3-文件格式"><span class="toc-number">12.3.</span> <span class="toc-text">12.3 文件格式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-编程辅助"><span class="toc-number">13.</span> <span class="toc-text">13. 编程辅助</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#13-1-一些按键"><span class="toc-number">13.1.</span> <span class="toc-text">13.1 一些按键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-2-ctags"><span class="toc-number">13.2.</span> <span class="toc-text">13.2 ctags</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-3-cscope"><span class="toc-number">13.3.</span> <span class="toc-text">13.3 cscope</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-4-gtags"><span class="toc-number">13.4.</span> <span class="toc-text">13.4 gtags</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-5-编译"><span class="toc-number">13.5.</span> <span class="toc-text">13.5 编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-6-快速修改窗口"><span class="toc-number">13.6.</span> <span class="toc-text">13.6 快速修改窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-7-自动补全"><span class="toc-number">13.7.</span> <span class="toc-text">13.7 自动补全</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-8-多行缩进缩出"><span class="toc-number">13.8.</span> <span class="toc-text">13.8 多行缩进缩出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-9-折叠"><span class="toc-number">13.9.</span> <span class="toc-text">13.9 折叠</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-命令行"><span class="toc-number">14.</span> <span class="toc-text">14. 命令行</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#14-1-命令行模式下的快捷键："><span class="toc-number">14.1.</span> <span class="toc-text">14.1 命令行模式下的快捷键：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-2-执行外部命令"><span class="toc-number">14.2.</span> <span class="toc-text">14.2 执行外部命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15-其它"><span class="toc-number">15.</span> <span class="toc-text">15. 其它</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#15-1-工作目录"><span class="toc-number">15.1.</span> <span class="toc-text">15.1 工作目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-2-一些快捷键（收集中）"><span class="toc-number">15.2.</span> <span class="toc-text">15.2 一些快捷键（收集中）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-3-在线帮助"><span class="toc-number">15.3.</span> <span class="toc-text">15.3 在线帮助</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-4-一些小功能"><span class="toc-number">15.4.</span> <span class="toc-text">15.4 一些小功能</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
 
 
 
 
 
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
-  
-  
+
+    
+        <section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'swing'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/01/24/这11个习惯，请逼自己养成！（第五个很多人都做不到）/" title="下一篇: 这11个习惯，请逼自己养成！（第五个很多人都做不到）">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/01/24/史上最全的Vim命令/">史上最全的Vim命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/24/这11个习惯，请逼自己养成！（第五个很多人都做不到）/">这11个习惯，请逼自己养成！（第五个很多人都做不到）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/23/CrystalCrazy/">中国古人23条顶级哲理：大水漫不过鸭子背！｜可读</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/23/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/18/使用hexo搭建自己的博客 - 快速开始/">使用hexo搭建自己的博客 - 快速开始</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

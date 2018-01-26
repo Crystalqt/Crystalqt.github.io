@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Crystalqt.github.io/"/>
-  <updated>2018-01-26T02:12:52.000Z</updated>
+  <updated>2018-01-26T07:47:16.000Z</updated>
   <id>http://Crystalqt.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux下压缩和解压缩命令</title>
+    <link href="http://Crystalqt.github.io/2018/01/26/Linux%E4%B8%8B%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/"/>
+    <id>http://Crystalqt.github.io/2018/01/26/Linux下压缩和解压缩命令/</id>
+    <published>2018-01-26T07:25:35.000Z</published>
+    <updated>2018-01-26T07:47:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>范例： </p><p>.tar<br>解包：tar -xvf FileName.tar<br>打包：tar -cvf FileName.tar DirName<br>注：tar是打包，不是压缩！</p><hr><p>.gz<br>解压1：gunzip FileName.gz<br>解压2：gzip -d FileName.gz<br>压缩：gzip FileName </p><hr><p>.tar.gz<br>解压：tar zxvf FileName.tar.gz<br>压缩：tar zcvf FileName.tar.gz DirName </p><hr><p>.bz2<br>解压1：bzip2 -d FileName.bz2<br>解压2：bunzip2 FileName.bz2<br>压缩： bzip2 -z FileName </p><hr><p>.tar.bz2<br>解压：tar jxvf FileName.tar.bz2<br>压缩：tar jcvf FileName.tar.bz2 DirName </p><hr><p>.bz<br>解压1：bzip2 -d FileName.bz<br>解压2：bunzip2 FileName.bz<br>压缩：未知 </p><hr><p>.tar.bz<br>解压：tar jxvf FileName.tar.bz<br>压缩：未知 </p><hr><p>.Z<br>解压：uncompress FileName.Z<br>压缩：compress FileName </p><hr><p>.tar.Z<br>解压：tar Zxvf FileName.tar.Z<br>压缩：tar Zcvf FileName.tar.Z DirName </p><hr><p>.tgz<br>解压：tar zxvf FileName.tgz<br>压缩：未知 </p><hr><p>.tar.tgz<br>解压：tar zxvf FileName.tar.tgz<br>压缩：tar zcvf FileName.tar.tgz FileName </p><hr><p>.zip<br>解压：unzip FileName.zip<br>压缩：zip FileName.zip DirName </p><hr><p>.rar<br>解压：rar a FileName.rar<br>压缩：rar e FileName.rar </p><hr><p>压缩解压缩<br>zip文件：<br>功能说明：压缩文件。 </p><p>语　　法：zip [-AcdDfFghjJKlLmoqrSTuvVwXyz$][-b &lt;工作目录&gt;][-ll][-n &lt;字尾字符串&gt;][-t &lt;日期时间&gt;][-&lt;压缩效率&gt;][压缩文件][文件…][-i &lt;范本样式&gt;][-x &lt;范本样式&gt;] </p><p>补充说明：zip是个使用广泛的压缩程序，文件经它压缩后会另外产生具有”.zip”扩展名的压缩文件。 </p><p>参　　数：<br>-A 调整可执行的自动解压缩文件。<br>-b&lt;工作目录&gt; 指定暂时存放文件的目录。 </p><p>-c 替每个被压缩的文件加上注释。<br>-d 从压缩文件内删除指定的文件。<br>-D 压缩文件内不建立目录名称。<br>-f 此参数的效果和指定”-u”参数类似，但不仅更新既有文件，如果某些文件原本不存在于压缩文件内，使用本参数会一并将其加入压缩文件中。<br>-F 尝试修复已损坏的压缩文件。<br>-g 将文件压缩后附加在既有的压缩文件之后，而非另行建立新的压缩文件。<br>-h 在线帮助。<br>-i&lt;范本样式&gt; 只压缩符合条件的文件。<br>-j 只保存文件名称及其内容，而不存放任何目录名称。<br>-J 删除压缩文件前面不必要的数据。<br>-k 使用MS-DOS兼容格式的文件名称。<br>-l 压缩文件时，把LF字符置换成LF+CR字符。<br>-ll 压缩文件时，把LF+CR字符置换成LF字符。<br>-L 显示版权信息。<br>-m 将文件压缩并加入压缩文件后，删除原始文件，即把文件移到压缩文件中。<br>-n&lt;字尾字符串&gt; 不压缩具有特定字尾字符串的文件。<br>-o 以压缩文件内拥有最新更改时间的文件为准，将压缩文件的更改时间设成和该文件相同。<br>-q 不显示指令执行过程。<br>-r 递归处理，将指定目录下的所有文件和子目录一并处理。<br>-S 包含系统和隐藏文件。<br>-t&lt;日期时间&gt; 把压缩文件的日期设成指定的日期。<br>-T 检查备份文件内的每个文件是否正确无误。<br>-u 更换较新的文件到压缩文件内。<br>-v 显示指令执行过程或显示版本信息。<br>-V 保存VMS操作系统的文件属性。<br>-w 在文件名称里假如版本编号，本参数仅在VMS操作系统下有效。<br>-x&lt;范本样式&gt; 压缩时排除符合条件的文件。<br>-X 不保存额外的文件属性。<br>-y 直接保存符号连接，而非该连接所指向的文件，本参数仅在UNIX之类的系统下有效。<br>-z 替压缩文件加上注释。<br>-$ 保存第一个被压缩文件所在磁盘的卷册名称。<br>-&lt;压缩效率&gt; 压缩效率是一个介于1-9的数值。 </p><hr><p>rar文件： </p><p>Rar 用法: rar ＜命令＞ -＜选项1＞ ….-＜选项N＞ ＜操作文档＞ ＜文件…＞ ＜@文件列表…＞ ＜解压路径＞ h/](J k!P x l”w:G v K q7i6v </p><p>　　通常rar命令由一个主命令加若干选项（可选）构成，操作文档为操作施加的.rar文件对象，文件或文件列表为对操作文档实现修饰的具体文件或目录（可选）。 </p><p>　　Y0`-o r#V r n ~”p9f5N rar常用命令主要有: </p><p>　　1) a 添加文件到操作文档 举例rar a test.rar file1.txt </p><p>　　若test.rar文件不存在，则打包file1.txt文件成test.rar rar a test.rar file2.txt 若test.rar文件已经存在，则添加file2.txt文件到test.rar中(这样 test.rar中就有两个文件了）注，如果操作文档中已有某文件的一份拷贝，则a命令更新该文件 另，对目录也可以进行操作 eg. rar a test.rar dir1 。 </p><p>　　2) e test.rar 注，用e解压的话，不仅原来的file1.txt和file2.txt被解压到当前目录，就连dir1里面的所有文件也被解压到当前目录下，不能保持压缩前的目录结构，如果想保持压缩前的目录结构，用x解压。 </p><p>　　3) c 对操作文档添加说明注释 eg. rar c test.rar </p><p>　　（会出现Reading comment from stdin字样，然后输入一行或多行注释，以ctrl+d结束）。 </p><p>　　4) cf 添加文件注释，类似上面的c，不过这个是对压缩文档中每个文件进行注释 cw 将文档注释写入文件 eg. rar cw test.rar comment.txt。 </p><p>　　5) d 从文档中删除文件 eg. rar d test.rar file1.txt e </p><p>　　将文件解压到当前目录 eg. rar。 </p><p>　　6) e test.rar 注，用e解压的话，不仅原来的file1.txt和file2.txt被解压到当前目录，就连dir1里面的所有文件也被解压到当前目录下，不能保持压缩前的目录结构，如果想保持压缩前的目录结构，用x解压。 </p><p>　　7) r 修复文档 eg. rar r test.rar </p><p>　　当rar文件有问题时，可以尝试用该命令进行修复（鬼知道有多少用） 。 </p><p>　　8) s 转换文档成自解压文档 eg. rar s test.rar </p><p>　　会生成一个test.sfx的可执行文档，运行它的效果就相当于rar x test.rar， 适合于向没有rar的用户传输文件。 </p><p>　　9) t 检测文档 eg. rar t test.rar </p><p>　　检测test.rar的完整性。 </p><p>　　10) k 锁定文档 eg. rar k test.rar </p><p>　　锁定文档后，该文档就无法进行任何更新操作了。 </p><hr><p>.Z文件：<br>命令： compress<br>格式： compress 选项 文件列表<br>功能： 用Lempel-ziv压缩方法来压缩文件或压缩标准输入<br>选项： -r 递归操作，如果指定目录变元，则压缩该目录及其子目录中的所有文件。<br>-c 将压缩数据返回标准输出，而缺省情况下为压缩文件时将压缩数据返回文件。<br>-v 显示每个文件夹的压缩百分比。<br>解释： 在用compress压缩文件时，将在原文件名之后加上扩展名.Z。如果不指定文件，则压缩标准输入，其结果返回标准输出。<br>实例： 目的：压缩/mnt/lgx/a1.doc文件<br>命令：＃compress /mnt/lgx/a1.doc<br>结果：压缩后生成a1.doc.Z文件。 </p><p>命令： uncompress<br>格式： uncompress 选项 文件列表<br>功能： 解压缩用compress 程序压缩过的文件<br>选项： -c 它将压缩数据发往标准输出而不是改写旧的压缩文件<br>解释： 如果不指定文件，则解压缩标准输入。缺省-c时，为解压缩。<br>实例： 目的：解压缩/mnt/lgx/a1.doc.Z<br>命令：# uncompress /mnt/lgx/a1.doc.Z </p><hr><p>.gz文件： </p><p>命令： gzip<br>格式： gzip 选项 文件目录列表<br>功能： 用Lempel-ziv编码压缩文件<br>选项： -c 压缩结果写入标准输出，原文件保持不变。缺省时gzip将原文件压缩为.gz文件，并删除原文件。<br>-v 输出处理信息。<br>-d 解压缩指定文件。<br>-t 测试压缩文件的完整性。<br>解释： 值得一提的是，gzip比compress压缩更加有效。<br>实例： 目的：压缩/mnt/lgx/a1.doc<br>命令：＃gzip -v /mnt/lgx/a1.doc<br>结果：产生a1.doc.gz的压缩文件 </p><p>命令： gunzip<br>格式： gunzip 选项 文件列表<br>功能： 解压缩用gzip命令（以及compress和zip命令）压缩过的文件<br>选项： -c 将输出写入标准输出，原文件保持不变。缺省时，gunzip将压缩文件变成解压缩文件。<br>-l 列出压缩文件中的文件而不解压缩。<br>-r 递归解压缩，深入目录结构中，解压缩命令行变元所指定目录中的所有子目录内的文件。<br>实例： 目的：解压缩/mnt/lgx/a1.doc.gz<br>命令：＃gunzip /mnt/lgx/a1.doc.gz </p><hr><p>.tar文件： </p><p>命令： tar<br>格式： tar 选项 文件目录列表<br>功能： 对文件目录进行打包备份<br>选项： -c 建立新的归档文件<br>-r 向归档文件末尾追加文件<br>-x 从归档文件中解出文件<br>-O 将文件解开到标准输出<br>-v 处理过程中输出相关信息<br>-f 对普通文件操作<br>-z 调用gzip来压缩归档文件，与-x联用时调用gzip完成解压缩<br>-Z 调用compress来压缩归档文件，与-x联用时调用compress完成解压缩<br>实例1： 目的：用tar打包一个目录下的文件<br>命令：＃tar -cvf /mnt/lgx/a1.doc<br>结果：产生一个以.tar为扩展名的打包文件<br>实例2： 目的：用tar解开打包文件<br>命令：＃tar -xvf /mnt/lgx/a1.doc.tar<br>附加说明：在通常情况下，tar打包与gzip（压缩）经常联合使用，效果更好。方法是：<br>首先用tar打包，如：＃tar -cvf /mnt/lgx/a1.doc （产生a1.doc.tar文件）<br>然后用gzip压缩a1.doc.tar文件，如：＃gzip /mnt/lgx/a1.doc.tar （产生a1.doc.tar.gz文件）<br>实例3： 目的：解压a1.doc.tar.gz文件<br>方法1：<br>＃gzip -dc /mnt/lgx/a1.doc.tar.gz （产生a1.doc.tar文件）<br>＃tar -xvf /mnt/lgx/a1.doc.tar （产生a1.doc文件）<br>这两次命令也可使用管道功能，把两个命令合二为一：<br>＃gzip -dc /mnt/lgx/a1.doc.tar.gz | tar -xvf<br>方法2：使用tar提供的自动调用gzip解压缩功能<br>＃tar -xzvf /mnt/lgx/a1.doc.tar.gz<br>经过tar打包后，也可用compress命令压缩（注：gzip比compress压缩更加有效），产生一个以.tar.Z的文件，在解包时，可先用 “uncompress 文件名”格式解压，然后用“tar -xvf 文件名”解包。也可直接调用“tar -Zxvf 文件名”解包。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;范例： &lt;/p&gt;
+&lt;p&gt;.tar&lt;br&gt;解包：tar -xvf FileName.tar&lt;br&gt;打包：tar -cvf FileName.tar DirName&lt;br&gt;注：tar是打包，不是压缩！&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;.gz&lt;br&gt;解压1：gunzip FileName
+      
+    
+    </summary>
+    
+      <category term="SCM" scheme="http://Crystalqt.github.io/categories/SCM/"/>
+    
+    
+      <category term="Linux" scheme="http://Crystalqt.github.io/tags/Linux/"/>
+    
+      <category term="压缩" scheme="http://Crystalqt.github.io/tags/%E5%8E%8B%E7%BC%A9/"/>
+    
+      <category term="解压" scheme="http://Crystalqt.github.io/tags/%E8%A7%A3%E5%8E%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>你的格局决定你的结局</title>

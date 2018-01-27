@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Crystalqt.github.io/"/>
-  <updated>2018-01-26T14:29:20.000Z</updated>
+  <updated>2018-01-27T12:06:17.000Z</updated>
   <id>http://Crystalqt.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac同时安装jdk1.7，1.8</title>
+    <link href="http://Crystalqt.github.io/2018/01/27/Mac%E5%90%8C%E6%97%B6%E5%AE%89%E8%A3%85jdk1-7%EF%BC%8C1-8/"/>
+    <id>http://Crystalqt.github.io/2018/01/27/Mac同时安装jdk1-7，1-8/</id>
+    <published>2018-01-27T11:52:24.000Z</published>
+    <updated>2018-01-27T12:06:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<font color="black" size="4" face="黑体">安装jdk.dmp文件过程略，全是点点点，直接命令加代码走起。<br>1. 启动终端Terminal<br>2. 进入当前用户的home目录<br>输入cd ~<br>3. 创建.bash_profile,命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch .bash_profile      <span class="comment">#touch 命令换成vim直接编译也可以，我使用vim，比较方便</span></span><br></pre></td></tr></table></figure><br><br>4. 编辑vim .bash_profile，添加代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:/usr/<span class="built_in">local</span>/mysql/bin</span><br><span class="line"><span class="comment"># 设置 JDK 7</span></span><br><span class="line"><span class="built_in">export</span> JAVA_7_HOME=`/usr/libexec/java_home -v 1.7`</span><br><span class="line"><span class="comment"># 设置 JDK 8</span></span><br><span class="line"><span class="built_in">export</span> JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`</span><br><span class="line"></span><br><span class="line"><span class="comment">#默认JDK 7</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=<span class="variable">$JAVA_7_HOME</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#alias命令动态切换JDK版本</span></span><br><span class="line"><span class="built_in">alias</span> jdk7=<span class="string">"export JAVA_HOME=<span class="variable">$JAVA_7_HOME</span>"</span></span><br><span class="line"><span class="built_in">alias</span> jdk8=<span class="string">"export JAVA_HOME=<span class="variable">$JAVA_8_HOME</span>"</span></span><br></pre></td></tr></table></figure><br><br>然后保存。<br>5. 执行.bash_profile生效新配置，命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> .bash_profile</span><br></pre></td></tr></table></figure><br><br>6. 查看java版本，命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure><br><br>如果要换jdk1.8，则把.bash_profile中代码更改下，如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=<span class="variable">$JAVA_7_HOME</span>改为<span class="built_in">export</span> JAVA_HOME=<span class="variable">$JAVA_8_HOME</span></span><br></pre></td></tr></table></figure><br><br>这样就可以来回切换了，OVER！<br></font>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;font color=&quot;black&quot; size=&quot;4&quot; face=&quot;黑体&quot;&gt;安装jdk.dmp文件过程略，全是点点点，直接命令加代码走起。&lt;br&gt;1. 启动终端Terminal&lt;br&gt;2. 进入当前用户的home目录&lt;br&gt;输入cd ~&lt;br&gt;3. 创建.bash_profil
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://Crystalqt.github.io/categories/Android/"/>
+    
+    
+      <category term="android" scheme="http://Crystalqt.github.io/tags/android/"/>
+    
+      <category term="jkd1.7" scheme="http://Crystalqt.github.io/tags/jkd1-7/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac搭建android6.0编译环境及导入AndroidStudio</title>

@@ -194,7 +194,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Android-6-0/" style="font-size: 10px;">Android 6.0</a> <a href="/tags/AndroidStudio/" style="font-size: 10px;">AndroidStudio</a> <a href="/tags/Chapter-1/" style="font-size: 10px;">Chapter 1</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/THLDL领导力/" style="font-size: 10px;">THLDL领导力</a> <a href="/tags/Xcode-5-0-2/" style="font-size: 10px;">Xcode 5.0.2</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/repo/" style="font-size: 10px;">repo</a> <a href="/tags/vim-命令/" style="font-size: 10px;">vim 命令</a> <a href="/tags/分屏/" style="font-size: 10px;">分屏</a> <a href="/tags/励志/" style="font-size: 15px;">励志</a> <a href="/tags/压缩/" style="font-size: 10px;">压缩</a> <a href="/tags/哲理/" style="font-size: 15px;">哲理</a> <a href="/tags/定位/" style="font-size: 10px;">定位</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/格局/" style="font-size: 10px;">格局</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/解压/" style="font-size: 10px;">解压</a>
+                        <a href="/tags/Android-6-0/" style="font-size: 10px;">Android 6.0</a> <a href="/tags/AndroidStudio/" style="font-size: 10px;">AndroidStudio</a> <a href="/tags/Chapter-1/" style="font-size: 10px;">Chapter 1</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/THLDL领导力/" style="font-size: 10px;">THLDL领导力</a> <a href="/tags/Xcode-5-0-2/" style="font-size: 10px;">Xcode 5.0.2</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/jkd1-7/" style="font-size: 10px;">jkd1.7</a> <a href="/tags/repo/" style="font-size: 10px;">repo</a> <a href="/tags/vim-命令/" style="font-size: 10px;">vim 命令</a> <a href="/tags/分屏/" style="font-size: 10px;">分屏</a> <a href="/tags/励志/" style="font-size: 15px;">励志</a> <a href="/tags/压缩/" style="font-size: 10px;">压缩</a> <a href="/tags/哲理/" style="font-size: 15px;">哲理</a> <a href="/tags/定位/" style="font-size: 10px;">定位</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/格局/" style="font-size: 10px;">格局</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/解压/" style="font-size: 10px;">解压</a>
                     </div>
                 </section>
                 
@@ -326,6 +326,70 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Mac同时安装jdk1-7，1-8" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/01/27/Mac同时安装jdk1-7，1-8/" class="article-date">
+      <time datetime="2018-01-27T11:52:24.000Z" itemprop="datePublished">2018-01-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/27/Mac同时安装jdk1-7，1-8/">Mac同时安装jdk1.7，1.8</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <font color="black" size="4" face="黑体">安装jdk.dmp文件过程略，全是点点点，直接命令加代码走起。<br>1. 启动终端Terminal<br>2. 进入当前用户的home目录<br>输入cd ~<br>3. 创建.bash_profile,命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch .bash_profile      <span class="comment">#touch 命令换成vim直接编译也可以，我使用vim，比较方便</span></span><br></pre></td></tr></table></figure><br><br>4. 编辑vim .bash_profile，添加代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:/usr/<span class="built_in">local</span>/mysql/bin</span><br><span class="line"><span class="comment"># 设置 JDK 7</span></span><br><span class="line"><span class="built_in">export</span> JAVA_7_HOME=`/usr/libexec/java_home -v 1.7`</span><br><span class="line"><span class="comment"># 设置 JDK 8</span></span><br><span class="line"><span class="built_in">export</span> JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`</span><br><span class="line"></span><br><span class="line"><span class="comment">#默认JDK 7</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=<span class="variable">$JAVA_7_HOME</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#alias命令动态切换JDK版本</span></span><br><span class="line"><span class="built_in">alias</span> jdk7=<span class="string">"export JAVA_HOME=<span class="variable">$JAVA_7_HOME</span>"</span></span><br><span class="line"><span class="built_in">alias</span> jdk8=<span class="string">"export JAVA_HOME=<span class="variable">$JAVA_8_HOME</span>"</span></span><br></pre></td></tr></table></figure><br><br>然后保存。<br>5. 执行.bash_profile生效新配置，命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> .bash_profile</span><br></pre></td></tr></table></figure><br><br>6. 查看java版本，命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure><br><br>如果要换jdk1.8，则把.bash_profile中代码更改下，如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=<span class="variable">$JAVA_7_HOME</span>改为<span class="built_in">export</span> JAVA_HOME=<span class="variable">$JAVA_8_HOME</span></span><br></pre></td></tr></table></figure><br><br>这样就可以来回切换了，OVER！<br></font>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jkd1-7/">jkd1.7</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-Mac搭建android6-0编译环境及导入AndroidStudio" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -1115,78 +1179,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/励志/">励志</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/哲理/">哲理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/01/23/hello-world/" class="article-date">
-      <time datetime="2018-01-23T04:18:48.000Z" itemprop="datePublished">2018-01-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/23/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/HEXO/">HEXO</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
     </div>
 
       
